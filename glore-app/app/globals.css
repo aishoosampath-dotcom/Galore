@@ -123,6 +123,82 @@
 /* Scroll indicator */
 .bounce-indicator { animation: bounce-indicator 2.2s ease-in-out infinite; }
 
+/* ── Section cards — hover gradient border + lift ───────────────── */
+
+.card-hover {
+  position: relative;
+  background: rgba(18, 10, 30, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  isolation: isolate;
+}
+.card-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 63, 190, 0),
+    rgba(232, 121, 176, 0)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.card-hover:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(123, 63, 190, 0.75),
+    rgba(168, 85, 200, 0.55),
+    rgba(232, 121, 176, 0.55)
+  );
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  background: rgba(18, 10, 30, 0.72);
+  box-shadow: 0 20px 60px rgba(123, 63, 190, 0.12);
+}
+
+/* Testimonial card — static soft glow border */
+.testimonial-card {
+  position: relative;
+  background: rgba(18, 10, 30, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 0 1px rgba(123, 63, 190, 0.25),
+    0 0 24px rgba(123, 63, 190, 0.08),
+    0 0 48px rgba(232, 121, 176, 0.05);
+  transition: box-shadow 0.35s ease, transform 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 200, 0.45),
+    0 0 30px rgba(123, 63, 190, 0.18),
+    0 0 60px rgba(232, 121, 176, 0.10);
+}
+
+/* Section divider line */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(123, 63, 190, 0.35) 30%,
+    rgba(232, 121, 176, 0.35) 70%,
+    transparent 100%
+  );
+}
+
 /* ── Base resets ────────────────────────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; }
