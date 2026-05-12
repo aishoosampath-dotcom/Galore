@@ -63,7 +63,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center gap-[5px] p-2 w-10 h-10"
+          className="md:hidden flex flex-col justify-center gap-[5px] p-2 w-11 h-11 min-w-[44px] min-h-[44px]"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -98,7 +98,7 @@ export default function Nav() {
             <a
               key={link}
               href="#"
-              className="text-sm font-medium text-[#9D8CB0] hover:text-[#F0EAF8] transition-colors py-1"
+              className="text-sm font-medium text-[#9D8CB0] hover:text-[#F0EAF8] transition-colors py-3 min-h-[44px] flex items-center"
               onClick={() => setMenuOpen(false)}
             >
               {link}
@@ -106,7 +106,7 @@ export default function Nav() {
           ))}
           <a
             href="#"
-            className="mt-1 inline-block rounded-full border border-[rgba(123,63,190,0.5)] px-5 py-2 text-sm font-semibold text-[#F0EAF8] text-center"
+            className="mt-1 inline-block rounded-full border border-[rgba(123,63,190,0.5)] px-5 py-3 text-sm font-semibold text-[#F0EAF8] text-center min-h-[44px]"
             onClick={() => setMenuOpen(false)}
           >
             Get Access

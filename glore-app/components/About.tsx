@@ -65,7 +65,7 @@ function PhotoPlaceholder() {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-28 overflow-hidden">
       {/* Soft purple accent left */}
       <div
         className="pointer-events-none absolute top-1/2 -left-32 w-[480px] h-[480px] -translate-y-1/2 opacity-[0.07]"
@@ -155,7 +155,7 @@ export default function About() {
       </div>
 
       {/* Bottom divider */}
-      <div className="section-divider mx-auto max-w-7xl mt-28 px-6" />
+      <div className="section-divider mx-auto max-w-7xl mt-16 md:mt-28 px-6" />
     </section>
   );
 }

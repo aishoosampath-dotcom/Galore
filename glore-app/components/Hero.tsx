@@ -102,7 +102,7 @@ export default function Hero() {
         {/* Stats strip */}
         <motion.div
           {...fadeUp(0.6)}
-          className="flex flex-wrap justify-center gap-x-14 gap-y-6 mt-14"
+          className="flex flex-wrap justify-center gap-x-8 md:gap-x-14 gap-y-6 mt-14"
         >
           {stats.map(({ value, label }) => (
             <div key={label} className="text-center">

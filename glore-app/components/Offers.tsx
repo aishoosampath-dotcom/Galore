@@ -78,7 +78,7 @@ const services = [
 
 export default function Offers() {
   return (
-    <section id="tools" className="relative py-28 overflow-hidden">
+    <section id="tools" className="relative py-20 md:py-28 overflow-hidden">
       {/* Soft pink accent right */}
       <div
         className="pointer-events-none absolute top-1/2 -right-32 w-[500px] h-[500px] -translate-y-1/2 opacity-[0.07]"
@@ -161,7 +161,7 @@ export default function Offers() {
       </div>
 
       {/* Bottom divider */}
-      <div className="section-divider mx-auto max-w-7xl mt-28 px-6" />
+      <div className="section-divider mx-auto max-w-7xl mt-16 md:mt-28 px-6" />
     </section>
   );
 }

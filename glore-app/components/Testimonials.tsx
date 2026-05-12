@@ -82,7 +82,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-28 overflow-hidden">
+    <section id="testimonials" className="relative py-20 md:py-28 overflow-hidden">
       {/* Ambient glow — centered */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] opacity-[0.06]"
@@ -157,7 +157,7 @@ export default function Testimonials() {
       </div>
 
       {/* Bottom divider */}
-      <div className="section-divider mx-auto max-w-7xl mt-28 px-6" />
+      <div className="section-divider mx-auto max-w-7xl mt-16 md:mt-28 px-6" />
     </section>
   );
 }
