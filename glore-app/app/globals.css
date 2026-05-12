@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --color-glore-bg: #08050F;
+  --color-glore-surface: #120A1E;
+  --color-glore-purple: #7B3FBE;
+  --color-glore-pink: #E879B0;
+  --color-glore-mid: #A855C8;
+  --color-glore-text: #F0EAF8;
+  --color-glore-muted: #9D8CB0;
+  --font-display: var(--font-syne);
+  --font-body: var(--font-inter);
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────── */
+
+@keyframes orb-drift-1 {
+  0%,  100% { transform: translate(0px,  0px)   scale(1);    }
+  33%        { transform: translate(40px, -50px) scale(1.06); }
+  66%        { transform: translate(-30px, 35px) scale(0.96); }
+}
+
+@keyframes orb-drift-2 {
+  0%,  100% { transform: translate(0px,  0px)   scale(1);    }
+  33%        { transform: translate(-50px, 40px) scale(1.04); }
+  66%        { transform: translate(35px, -45px) scale(0.97); }
+}
+
+@keyframes wordmark-shimmer {
+  0%   { background-position: -300% center; }
+  100% { background-position:  300% center; }
+}
+
+@keyframes bounce-indicator {
+  0%, 100% { transform: translateY(0px);  opacity: 0.55; }
+  50%       { transform: translateY(10px); opacity: 1;    }
+}
+
+/* ── Animation utility classes ─────────────────────────────────── */
+
+.orb-1 { animation: orb-drift-1 28s ease-in-out infinite; }
+.orb-2 { animation: orb-drift-2 34s ease-in-out infinite; }
+
+.wordmark-shimmer {
+  background: linear-gradient(
+    135deg,
+    #7B3FBE  0%,
+    #E879B0 28%,
+    #F0EAF8 50%,
+    #E879B0 72%,
+    #7B3FBE 100%
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wordmark-shimmer 4s linear infinite;
+}
+
+/* Frosted glass panel with 1-px gradient border */
+.gradient-border {
+  position: relative;
+  background: rgba(18, 10, 30, 0.65);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 63, 190, 0.75),
+    rgba(168, 85, 200, 0.55),
+    rgba(232, 121, 176, 0.55)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* CTA button with neon glow on hover */
+.btn-glow {
+  position: relative;
+  background: linear-gradient(135deg, #7B3FBE, #A855C8, #E879B0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  isolation: isolate;
+}
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #7B3FBE, #E879B0);
+  opacity: 0;
+  filter: blur(18px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 22px 4px  rgba(123, 63,  190, 0.65),
+    0 0 55px 16px rgba(232, 121, 176, 0.22);
+}
+.btn-glow:hover::after { opacity: 0.75; }
+
+/* Dot-grid texture overlay */
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.065) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+}
+
+/* Scroll indicator */
+.bounce-indicator { animation: bounce-indicator 2.2s ease-in-out infinite; }
+
+/* ── Base resets ────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #08050F;
+  color: #F0EAF8;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(123, 63, 190, 0.45);
+  color: #F0EAF8;
+}
