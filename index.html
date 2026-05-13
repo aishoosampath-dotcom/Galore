@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glore — AI Tools & Influencer Technology</title>
+  <meta name="description" content="The one-stop directory where AI influencers discover and access the best AI tools, fast." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       1. NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+
+      <!-- Logo -->
+      <a href="#" class="nav__logo" aria-label="Glore home">
+        <span class="nav__logo-text">Glore</span>
+      </a>
+
+      <!-- Desktop links -->
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a href="#about"     class="nav__link">About</a>
+        <a href="#services"  class="nav__link">Tools</a>
+        <a href="#social"    class="nav__link">Reviews</a>
+        <a href="#contact"   class="nav__link">Contact</a>
+        <a href="#contact"   class="btn btn--nav">Get Access</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+      <a href="#about"    class="nav__mobile-link" onclick="closeMenu()">About</a>
+      <a href="#services" class="nav__mobile-link" onclick="closeMenu()">Tools</a>
+      <a href="#social"   class="nav__mobile-link" onclick="closeMenu()">Reviews</a>
+      <a href="#contact"  class="nav__mobile-link" onclick="closeMenu()">Contact</a>
+      <a href="#contact"  class="btn btn--purple w-full text-center" onclick="closeMenu()">Get Access</a>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       2. HERO
+  ══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Ambient orbs -->
+    <div class="orb orb--purple" aria-hidden="true"></div>
+    <div class="orb orb--pink"   aria-hidden="true"></div>
+
+    <!-- Dot grid texture -->
+    <div class="dot-grid" aria-hidden="true"></div>
+
+    <div class="hero__inner container">
+
+      <!-- Left: copy -->
+      <div class="hero__copy" data-animate="fade-up">
+        <span class="badge">
+          <span class="badge__dot"></span>
+          The AI Tool Hub for Influencers
+        </span>
+
+        <h1 class="hero__headline">
+          Discover Every<br />
+          <em>AI Tool</em> You Need<br />
+          In One Place.
+        </h1>
+
+        <p class="hero__sub">
+          Glore is the premium directory built for creators and AI influencers
+          who want to find, compare, and launch the best tools — fast.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#services" class="btn btn--purple">Explore Tools →</a>
+          <a href="#about"    class="btn btn--ghost">Learn More</a>
+        </div>
+
+        <!-- Social proof micro-bar -->
+        <div class="hero__social-proof">
+          <div class="hero__avatars" aria-hidden="true">
+            <div class="avatar avatar--1"></div>
+            <div class="avatar avatar--2"></div>
+            <div class="avatar avatar--3"></div>
+          </div>
+          <p class="hero__proof-text">
+            <strong>2,400+</strong> creators already onboard
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: visual placeholder -->
+      <div class="hero__visual" data-animate="fade-left">
+        <div class="hero__card glass-card">
+          <div class="hero__card-label">Trending Tool</div>
+          <div class="hero__card-tool">
+            <div class="tool-icon tool-icon--lg"></div>
+            <div>
+              <p class="tool-name">Midjourney v7</p>
+              <p class="tool-cat">Image Generation</p>
+            </div>
+          </div>
+          <div class="hero__card-stats">
+            <div class="stat">
+              <span class="stat__val">98%</span>
+              <span class="stat__lbl">Creator rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat__val">500K+</span>
+              <span class="stat__lbl">Monthly users</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating mini cards -->
+        <div class="hero__float hero__float--top glass-card glass-card--mini">
+          <div class="tool-icon"></div>
+          <span>Runway Gen-3</span>
+        </div>
+        <div class="hero__float hero__float--bottom glass-card glass-card--mini">
+          <div class="tool-icon tool-icon--pink"></div>
+          <span>ElevenLabs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       3. ABOUT
+  ══════════════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+
+      <div class="about__inner">
+
+        <!-- Photo placeholder -->
+        <div class="about__photo" data-animate="fade-right">
+          <div class="about__photo-frame">
+            <div class="about__photo-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <!-- Decorative ring -->
+          <div class="about__photo-ring" aria-hidden="true"></div>
+        </div>
+
+        <!-- Copy -->
+        <div class="about__copy" data-animate="fade-up">
+          <span class="section-label">About Glore</span>
+          <h2 class="section-heading">Built for Creators<br />Who Move Fast.</h2>
+          <p class="body-text">
+            Placeholder: This is where your story goes. Tell visitors who you are,
+            why you built Glore, and what makes this directory different from every
+            other AI tools list on the internet. Make it personal and compelling.
+          </p>
+          <p class="body-text">
+            Placeholder: Second paragraph. Expand on your vision, your background
+            in the influencer space, and the problem Glore solves for your audience.
+          </p>
+
+          <!-- Key facts -->
+          <div class="about__facts">
+            <div class="fact glass-card">
+              <span class="fact__val">500<span class="grad-text">+</span></span>
+              <span class="fact__lbl">AI Tools</span>
+            </div>
+            <div class="fact glass-card">
+              <span class="fact__val">40<span class="grad-text">+</span></span>
+              <span class="fact__lbl">Categories</span>
+            </div>
+            <div class="fact glass-card">
+              <span class="fact__val">10K<span class="grad-text">+</span></span>
+              <span class="fact__lbl">Creators</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       4. SERVICES / WHAT I OFFER
+  ══════════════════════════════════════════════ -->
+  <section class="services section" id="services">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-heading">Everything an AI Influencer<br />Could Need.</h2>
+        <p class="section-sub">
+          Three pillars that make Glore the go-to resource for creators
+          building their stack with artificial intelligence.
+        </p>
+      </div>
+
+      <div class="services__grid">
+
+        <div class="service-card glass-card" data-animate="fade-up" data-delay="0">
+          <div class="service-card__icon service-card__icon--purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Curated Tool Directory</h3>
+          <p class="service-card__body">
+            Placeholder: Describe this service. Every AI tool hand-picked and
+            categorised — Image Gen, Video, Writing, Coding, Audio, and more.
+            Updated weekly by the Glore team.
+          </p>
+          <a href="#" class="service-card__link">Explore →</a>
+        </div>
+
+        <div class="service-card glass-card service-card--featured" data-animate="fade-up" data-delay="100">
+          <div class="service-card__badge">Most Popular</div>
+          <div class="service-card__icon service-card__icon--pink">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Influencer Spotlights</h3>
+          <p class="service-card__body">
+            Placeholder: Describe this service. Weekly deep-dives on the AI
+            creators, educators, and builders shaping the space. Discover who
+            to follow, watch, and collaborate with.
+          </p>
+          <a href="#" class="service-card__link">Meet Creators →</a>
+        </div>
+
+        <div class="service-card glass-card" data-animate="fade-up" data-delay="200">
+          <div class="service-card__icon service-card__icon--purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Trend Intelligence</h3>
+          <p class="service-card__body">
+            Placeholder: Describe this service. Be the first to know which
+            tools are going viral in the creator economy. Weekly trend reports
+            delivered straight to your inbox.
+          </p>
+          <a href="#" class="service-card__link">See Trends →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       5. SOCIAL PROOF / TESTIMONIALS
+  ══════════════════════════════════════════════ -->
+  <section class="social section" id="social">
+    <div class="container">
+
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-label">Social Proof</span>
+        <h2 class="section-heading">Creators Are Talking.</h2>
+        <p class="section-sub">
+          Placeholder: A short sentence here about how many creators trust Glore
+          and why they keep coming back.
+        </p>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <div class="testimonial glass-card" data-animate="fade-up" data-delay="0">
+          <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "Placeholder testimonial. This is where a creator quote goes — make it
+            specific, enthusiastic, and focused on a result Glore helped them achieve.
+            Two to three sentences maximum."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar"></div>
+            <div>
+              <p class="testimonial__name">Creator Name</p>
+              <p class="testimonial__handle">@handle · 250K followers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card" data-animate="fade-up" data-delay="100">
+          <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "Placeholder testimonial. Another creator voice that builds trust.
+            Try to vary the use case — maybe this one focuses on time saved,
+            while the first focused on discovery."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar testimonial__avatar--2"></div>
+            <div>
+              <p class="testimonial__name">Creator Name</p>
+              <p class="testimonial__handle">@handle · 180K followers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass-card" data-animate="fade-up" data-delay="200">
+          <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "Placeholder testimonial. Third voice rounds out the social proof.
+            Consider a quote from a well-known AI influencer or a brand
+            partnership to add credibility."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar testimonial__avatar--3"></div>
+            <div>
+              <p class="testimonial__name">Creator Name</p>
+              <p class="testimonial__handle">@handle · 400K followers</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       6. LEAD CAPTURE / CONTACT
+  ══════════════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+
+      <!-- Ambient orb behind the section -->
+      <div class="orb orb--center" aria-hidden="true"></div>
+
+      <div class="contact__inner glass-card" data-animate="fade-up">
+
+        <div class="contact__copy">
+          <span class="section-label">Get Early Access</span>
+          <h2 class="section-heading">Join the Glore<br />Inner Circle.</h2>
+          <p class="body-text">
+            Placeholder: Describe what subscribers get — exclusive tool drops,
+            influencer spotlights, trend reports, and early access to new Glore
+            features. Make the offer feel premium and scarce.
+          </p>
+
+          <ul class="contact__perks">
+            <li class="perk">
+              <span class="perk__icon">✦</span>
+              Weekly AI tool drops before anyone else
+            </li>
+            <li class="perk">
+              <span class="perk__icon">✦</span>
+              Exclusive influencer interviews
+            </li>
+            <li class="perk">
+              <span class="perk__icon">✦</span>
+              Glore trend report — every Friday
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact__form-wrap">
+          <form class="contact__form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="handle" class="form-label">Social Handle <span class="form-optional">(optional)</span></label>
+              <input
+                type="text"
+                id="handle"
+                name="handle"
+                class="form-input"
+                placeholder="@yourhandle"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="submit" class="btn btn--purple btn--full">
+              Join the Inner Circle →
+            </button>
+
+            <p class="form-disclaimer">
+              No spam. Unsubscribe any time. We respect your inbox.
+            </p>
+          </form>
+
+          <!-- Success state (hidden by default) -->
+          <div class="form-success" id="form-success" aria-live="polite" hidden>
+            <span class="form-success__icon">✓</span>
+            <h3>You're in.</h3>
+            <p>Check your inbox for a welcome email from Glore.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       7. FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+
+    <!-- Top gradient divider -->
+    <div class="footer__divider" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="footer__inner">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">Glore</a>
+          <p class="footer__tagline">
+            The premium AI tools directory<br />built for creators who lead.
+          </p>
+          <div class="footer__socials">
+            <a href="#" aria-label="X / Twitter" class="social-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.857L1.254 2.25h6.773l4.22 5.573 4.997-5.573Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Nav columns -->
+        <div class="footer__nav">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Explore</h4>
+            <a href="#services"  class="footer__link">Tool Directory</a>
+            <a href="#"          class="footer__link">Categories</a>
+            <a href="#"          class="footer__link">Trending Now</a>
+            <a href="#"          class="footer__link">Submit a Tool</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <a href="#about"     class="footer__link">About</a>
+            <a href="#"          class="footer__link">Blog</a>
+            <a href="#social"    class="footer__link">Reviews</a>
+            <a href="#contact"   class="footer__link">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Legal</h4>
+            <a href="#"          class="footer__link">Privacy Policy</a>
+            <a href="#"          class="footer__link">Terms of Use</a>
+            <a href="#"          class="footer__link">Cookie Policy</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="year"></span> Glore. All rights reserved.</p>
+        <p class="footer__made">Built for AI creators, by AI creators.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
