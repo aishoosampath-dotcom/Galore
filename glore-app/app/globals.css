@@ -8,7 +8,7 @@
   --color-glore-mid: #A855C8;
   --color-glore-text: #F0EAF8;
   --color-glore-muted: #9D8CB0;
-  --font-display: var(--font-syne);
+  --font-display: var(--font-orbitron);
   --font-body: var(--font-inter);
 }
 
@@ -216,3 +216,10 @@ body {
   background: rgba(123, 63, 190, 0.45);
   color: #F0EAF8;
 }
+
+/* Hide scrollbar for horizontal tool strip */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }

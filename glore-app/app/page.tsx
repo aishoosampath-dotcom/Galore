@@ -1,9 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Offers from "@/components/Offers";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import FeaturedTools from "@/components/FeaturedTools";
+import ToolGrid from "@/components/ToolGrid";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -11,10 +9,8 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <About />
-      <Offers />
-      <Testimonials />
-      <Contact />
+      <FeaturedTools />
+      <ToolGrid />
       <Footer />
     </main>
   );
