@@ -60,7 +60,10 @@ document.addEventListener('keydown', (e) => {
 
 
 /* ── 4. Scroll-triggered animations (IntersectionObserver) ───── */
-const animatedEls = $$('[data-animate]');
+/* Hero elements (.hero-el) animate via CSS on load — exclude them here */
+const animatedEls = $$('[data-animate]').filter(
+  (el) => !el.closest('#hero')
+);
 
 const observerOptions = {
   threshold: 0.12,
@@ -192,10 +195,10 @@ $$('a[href^="#"]').forEach((anchor) => {
 });
 
 
-/* ── 8. Floating hero cards subtle parallax ──────────────────── */
-const floats = $$('.hero__float');
+/* ── 8. Hero visual subtle mouse parallax ────────────────────── */
+const heroVisual = $('#hero .hero__visual');
 
-if (floats.length && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+if (heroVisual && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
   let raf;
 
   document.addEventListener('mousemove', (e) => {
@@ -205,11 +208,8 @@ if (floats.length && window.matchMedia('(prefers-reduced-motion: no-preference)'
       const cy = window.innerHeight / 2;
       const dx = (e.clientX - cx) / cx; // -1 → 1
       const dy = (e.clientY - cy) / cy;
-
-      floats.forEach((el, i) => {
-        const factor = i % 2 === 0 ? 12 : -8;
-        el.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
-      });
+      /* Gentle tilt — backdrop moves slightly less than orbit nodes */
+      heroVisual.style.transform = `translate(${dx * 6}px, ${dy * 4}px)`;
     });
   });
 }

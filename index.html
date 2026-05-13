@@ -65,78 +65,182 @@
     <!-- Dot grid texture -->
     <div class="dot-grid" aria-hidden="true"></div>
 
+    <!-- Aurora beam behind headline -->
+    <div class="hero__aurora" aria-hidden="true"></div>
+
     <div class="hero__inner container">
 
-      <!-- Left: copy -->
-      <div class="hero__copy" data-animate="fade-up">
-        <span class="badge">
+      <!-- ── Left: copy ── -->
+      <div class="hero__copy">
+
+        <!-- Badge  (enters first) -->
+        <span class="badge hero-el" style="--hi:0">
           <span class="badge__dot"></span>
-          The AI Tool Hub for Influencers
+          The #1 AI Tool Hub for Influencers
         </span>
 
+        <!-- Headline (each line enters separately) -->
         <h1 class="hero__headline">
-          Discover Every<br />
-          <em>AI Tool</em> You Need<br />
-          In One Place.
+          <span class="hero-el hero-line" style="--hi:1">Your Audience Expects</span>
+          <span class="hero-el hero-line hero-line--grad" style="--hi:2">You to Know Every AI Tool.</span>
+          <span class="hero-el hero-line" style="--hi:3">Now You Will.</span>
         </h1>
 
-        <p class="hero__sub">
-          Glore is the premium directory built for creators and AI influencers
-          who want to find, compare, and launch the best tools — fast.
+        <!-- Subheadline -->
+        <p class="hero__sub hero-el" style="--hi:4">
+          I help AI influencers and content creators discover every tool their
+          audience will ask about — without spending hours scattered across Reddit,
+          Twitter, and a hundred different newsletters.
         </p>
 
-        <div class="hero__ctas">
-          <a href="#services" class="btn btn--purple">Explore Tools →</a>
-          <a href="#about"    class="btn btn--ghost">Learn More</a>
+        <!-- CTA row -->
+        <div class="hero__ctas hero-el" style="--hi:5">
+          <a href="#services" class="btn btn--hero-cta">
+            Explore 500+ AI Tools
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn--ghost">See How It Works</a>
         </div>
 
         <!-- Social proof micro-bar -->
-        <div class="hero__social-proof">
+        <div class="hero__social-proof hero-el" style="--hi:6">
           <div class="hero__avatars" aria-hidden="true">
             <div class="avatar avatar--1"></div>
             <div class="avatar avatar--2"></div>
             <div class="avatar avatar--3"></div>
+            <div class="avatar avatar--4"></div>
           </div>
           <p class="hero__proof-text">
-            <strong>2,400+</strong> creators already onboard
+            Trusted by <strong>2,400+</strong> AI creators &amp; influencers
           </p>
         </div>
-      </div>
 
-      <!-- Right: visual placeholder -->
-      <div class="hero__visual" data-animate="fade-left">
-        <div class="hero__card glass-card">
-          <div class="hero__card-label">Trending Tool</div>
-          <div class="hero__card-tool">
-            <div class="tool-icon tool-icon--lg"></div>
-            <div>
-              <p class="tool-name">Midjourney v7</p>
-              <p class="tool-cat">Image Generation</p>
+      </div><!-- /hero__copy -->
+
+      <!-- ── Right: abstract orbital visual ── -->
+      <div class="hero__visual hero-el" style="--hi:2" aria-hidden="true">
+
+        <!-- SVG backdrop: rings + grid mesh -->
+        <svg class="hv-backdrop" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hexGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M12 0 L24 6 L24 18 L12 24 L0 18 L0 6 Z" fill="none" stroke="rgba(123,63,190,0.09)" stroke-width="0.6"/>
+            </pattern>
+            <radialGradient id="fadeEdge" cx="50%" cy="50%" r="50%">
+              <stop offset="60%" stop-color="transparent"/>
+              <stop offset="100%" stop-color="#08050f"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Hex mesh -->
+          <circle cx="220" cy="220" r="215" fill="url(#hexGrid)"/>
+          <circle cx="220" cy="220" r="215" fill="url(#fadeEdge)"/>
+
+          <!-- Concentric rings -->
+          <circle class="hv-ring hv-ring--1" cx="220" cy="220" r="108"/>
+          <circle class="hv-ring hv-ring--2" cx="220" cy="220" r="162"/>
+          <circle class="hv-ring hv-ring--3" cx="220" cy="220" r="210"/>
+
+          <!-- Ring tick marks (12 evenly spaced, like clock positions) -->
+          <g class="hv-ticks">
+            <line x1="220" y1="14" x2="220" y2="22"/>
+            <line x1="326" y1="40" x2="321" y2="47"/>
+            <line x1="400" y1="114" x2="393" y2="119"/>
+            <line x1="426" y1="220" x2="418" y2="220"/>
+            <line x1="400" y1="326" x2="393" y2="321"/>
+            <line x1="326" y1="400" x2="321" y2="393"/>
+            <line x1="220" y1="426" x2="220" y2="418"/>
+            <line x1="114" y1="400" x2="119" y2="393"/>
+            <line x1="40" y1="326" x2="47" y2="321"/>
+            <line x1="14" y1="220" x2="22" y2="220"/>
+            <line x1="40" y1="114" x2="47" y2="119"/>
+            <line x1="114" y1="40" x2="119" y2="47"/>
+          </g>
+        </svg>
+
+        <!-- Central glowing core -->
+        <div class="hv-core">
+          <div class="hv-core__pulse"></div>
+          <div class="hv-core__inner">
+            <p class="hv-core__num">500<span class="hv-core__plus">+</span></p>
+            <p class="hv-core__lbl">AI Tools</p>
+          </div>
+        </div>
+
+        <!-- ── Orbiting nodes: inner ring (108px, 22s) ── -->
+        <div class="hv-orbit-wrap hv-orbit-wrap--inner">
+          <!-- Midjourney @ ~30° start -->
+          <div class="hv-track" style="--r:108px; --dur:22s; --delay:-1.83s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--purple"></span>
+              <span class="hv-label">Midjourney</span>
             </div>
           </div>
-          <div class="hero__card-stats">
-            <div class="stat">
-              <span class="stat__val">98%</span>
-              <span class="stat__lbl">Creator rating</span>
-            </div>
-            <div class="stat">
-              <span class="stat__val">500K+</span>
-              <span class="stat__lbl">Monthly users</span>
+          <!-- DALL·E @ ~210° start -->
+          <div class="hv-track" style="--r:108px; --dur:22s; --delay:-12.83s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--pink"></span>
+              <span class="hv-label">DALL·E 3</span>
             </div>
           </div>
         </div>
 
-        <!-- Floating mini cards -->
-        <div class="hero__float hero__float--top glass-card glass-card--mini">
-          <div class="tool-icon"></div>
-          <span>Runway Gen-3</span>
+        <!-- ── Orbiting nodes: mid ring (162px, 32s) ── -->
+        <div class="hv-orbit-wrap hv-orbit-wrap--mid">
+          <!-- Runway @ ~100° start -->
+          <div class="hv-track" style="--r:162px; --dur:32s; --delay:-8.89s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--pink"></span>
+              <span class="hv-label">Runway</span>
+            </div>
+          </div>
+          <!-- ElevenLabs @ ~280° start -->
+          <div class="hv-track" style="--r:162px; --dur:32s; --delay:-24.89s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--purple"></span>
+              <span class="hv-label">ElevenLabs</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__float hero__float--bottom glass-card glass-card--mini">
-          <div class="tool-icon tool-icon--pink"></div>
-          <span>ElevenLabs</span>
+
+        <!-- ── Orbiting nodes: outer ring (210px, 44s) ── -->
+        <div class="hv-orbit-wrap hv-orbit-wrap--outer">
+          <!-- GitHub Copilot @ ~60° start -->
+          <div class="hv-track" style="--r:210px; --dur:44s; --delay:-7.33s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--mid"></span>
+              <span class="hv-label">Copilot</span>
+            </div>
+          </div>
+          <!-- Sora @ ~240° start -->
+          <div class="hv-track" style="--r:210px; --dur:44s; --delay:-29.33s">
+            <div class="hv-node">
+              <span class="hv-dot hv-dot--pink"></span>
+              <span class="hv-label">Sora</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
+        <!-- Featured floating card (bottom-left of visual) -->
+        <div class="hv-feature glass-card">
+          <div class="hv-feature__dot"></div>
+          <div>
+            <p class="hv-feature__title">Trending Now</p>
+            <p class="hv-feature__sub">Sora · Video Generation</p>
+          </div>
+          <span class="hv-feature__badge">🔥 Hot</span>
+        </div>
+
+        <!-- Updated chip (top-right) -->
+        <div class="hv-chip glass-card">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Updated daily</span>
+        </div>
+
+      </div><!-- /hero__visual -->
+    </div><!-- /hero__inner -->
 
     <!-- Scroll indicator -->
     <div class="scroll-indicator" aria-hidden="true">
